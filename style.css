@@ -1,0 +1,125 @@
+ul {
+    list-style-type: none;
+    padding: 0;
+  }
+li{
+    padding: 10px;
+}
+.page-title{
+    width: 1100px
+}
+.movieCell{
+    display: flex;
+    padding: 10px;
+    border: 1px solid black;
+}
+.remove-button {
+    position: relative;
+    left: 343px;
+    top: -10px;
+    height: 25px;
+    width: 25px;
+    background-color: red;
+    color: white;
+    border: 1px transparent;
+    /* border-radius: 10px; */
+    padding: 5px;
+    cursor: pointer;
+}
+#body-container {
+    border: 1px solid black;
+    display: flex;
+    position: relative;
+    height: 800px;
+    width: 1920px;
+    top: 8px;
+    justify-content: space-around;
+    right: 10px;
+}
+#header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-template-columns: auto auto;
+    border-bottom: 1px solid black;
+    height: 80px;
+    margin: -8px;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+#search-bar{
+    border: 1px solid black;
+}
+.title{
+    /* hello? */
+    width: auto;
+    font-family: 'Roboto', sans-serif;
+    padding: 10px;
+}
+.tag {
+    height :20px;
+    bottom: -6px;
+    position: relative;
+    display: inline-block;
+    padding: 3px 5px; /* Adjust padding as needed */
+    background-color: #f0f0f0; /* Background color for the tag */
+    border: 1px solid #ccc; /* Border color and width */
+    border-radius: 10px; /* Border radius to create rounded corners */
+
+}
+.posterImage{
+    border: solid rgb(0, 0, 0);
+    width : 150px;
+}
+.posterImage img{
+    max-width: 100%; /* Ensure images don't exceed container width */
+    height: auto; /* Maintain aspect ratio */
+}
+#info-box-container {
+    position: relative;
+    border: 2px solid black;
+    width: 400px;
+    height: 500px;
+    top:15%;
+    /* bottom: 200px; */
+    /* left: 35%; */
+}
+#queriedMoviesContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+    position: relative;
+    top: 15px;
+    /* right: 50px; */
+    /* bottom: 50px; */
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 727px;
+    width: 654px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+#watchlist {
+    width: 500px;
+    height: 90%;
+    position: relative;
+    display: grid;
+    border: 2px solid black;
+    top: 40px;
+    /* left: 50px; */
+    padding: 10px;
+    overflow-y: auto;
+}
+#inputContainer{
+    text-align: center;
+    margin-top: 60px;
+}
+#movieItemContainer{
+    text-align: center;
+    justify-content: left;
+    margin-top: 60px;
+}
+/* hello? */
