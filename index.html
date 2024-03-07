@@ -6,7 +6,6 @@
     <title>Movie Watchlist</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
-    
 </head>
 <body>
     <div id ="header-container">
@@ -17,16 +16,7 @@
             <input type="text" id="movieTitle">
             <label for="movieYear">Year:</label>
             <input type="text" id="movieYear">
-            <label for="category">Category:</label>
-            <select id="category">
-                <option value="action">Action</option>
-                <option value="comedy">Comedy</option>
-                <option value="drama">Drama</option>
-                <option value="fantasy">Fantasy</option>
-                <option value="custom">Custom</option>
-            </select>
-            <input type="text" id="customCategory" placeholder="Enter custom category" style="display:none;">
-            <button onclick="addMovie()">Add Movie</button>
+            <button id="searchMovieButton">Search Movies</button>
         </div>
     </div>
 
@@ -37,18 +27,18 @@
         </ul>
     </div>
     <!-- mnake invis -->
-    <div id= "info-box-container" style = "display:bloc;">
+    <div id= "info-box-container" style = "display:block;">
         <p id="titleParagraph">Title: </p>
         <p id="bioParagraph">Bio:</p>
         <p id="tagsParagraph">Tags:</p>
         <!-- dynamically populate with JS -->
     </div>
 
-    <div id="queriedMoviesContainer" style = "display:block">
+    <div id="queriedMoviesContainer" style = "display:grid">
         
     </div>
     </div>
     
-    <script src="app.js"></script>
+    <script src="js\main.js" type="module"></script>
 </body>
 </html>

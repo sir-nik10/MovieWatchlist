@@ -1,7 +1,7 @@
 ul {
     list-style-type: none;
     padding: 0;
-  }
+}
 li{
     padding: 10px;
 }
@@ -15,7 +15,7 @@ li{
 }
 .remove-button {
     position: relative;
-    left: 343px;
+    left: 112px;
     top: -10px;
     height: 25px;
     width: 25px;
@@ -25,6 +25,13 @@ li{
     /* border-radius: 10px; */
     padding: 5px;
     cursor: pointer;
+}
+.searched-movies-div{
+    display :flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
 }
 #body-container {
     border: 1px solid black;
@@ -50,11 +57,12 @@ li{
 #search-bar{
     border: 1px solid black;
 }
-.title{
-    /* hello? */
-    width: auto;
+.title {
     font-family: 'Roboto', sans-serif;
     padding: 10px;
+    width: 240px;
+    height: 30px;
+    text-align: left;
 }
 .tag {
     height :20px;
@@ -67,9 +75,11 @@ li{
     border-radius: 10px; /* Border radius to create rounded corners */
 
 }
-.posterImage{
+.poster-image{
     border: solid rgb(0, 0, 0);
     width : 150px;
+    height: 222px;
+    padding: 5px;
 }
 .posterImage img{
     max-width: 100%; /* Ensure images don't exceed container width */
@@ -96,7 +106,7 @@ li{
     margin-left: 20px;
     margin-right: 20px;
     height: 727px;
-    width: 654px;
+    width: 690px;
     background-color: #f0f0f0;
     padding: 20px;
     overflow-y: auto;
