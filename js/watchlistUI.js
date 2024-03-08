@@ -4,6 +4,8 @@
 
 //TODO: append to the watchlist
 //design what data is being appended
+import { queryForMovie } from './movieData/api.js'
+
 function addMovie(title) {
  
     if(checkDuplicateTitle(title)){
@@ -20,8 +22,6 @@ function addMovie(title) {
     clearInputField(inputField);
 }
 
-import { queryForMovie } from './movieData/api.js'
-
 function updateWatchlist(thisTitle, category) {
     
     let watchlistDiv = document.getElementById('watchlist');
@@ -31,7 +31,7 @@ function updateWatchlist(thisTitle, category) {
 
     let movieCellDiv = document.createElement('div');
     movieCellDiv.value = 'movieCell';
-    movieCellDiv.className = 'movieCell';
+    movieCellDiv.className = 'movie-cell';
 
     let title = document.createElement('p');
     title.className = "title"; 
@@ -69,19 +69,6 @@ function updateWatchlist(thisTitle, category) {
     updateRemoveButtons();
 }
 
-function toggleMoreInfoVisibility(movieCellDiv) {
-    // Toggle display property of synopsis element
-    let moreInfoDiv = document.getElementById("info-box-container");
-    let moreInfoTitle = document.getElementById('titleParagraph');
-
-    moreInfoDiv.style.display = 'block';
-    let movieCellTitle = (movieCellDiv.querySelector(".title").textContent);
-    console.log(movieCellTitle);
-    moreInfoTitle.innerHTML = '';
-    moreInfoTitle.innerHTML = '<span>Title:<span/>'
-    moreInfoTitle.innerHTML += movieCellTitle;
-}
-
 // Get all remove buttons
 function updateRemoveButtons(){
     let removeButtons = document.querySelectorAll('.remove-button');
@@ -97,11 +84,3 @@ function updateRemoveButtons(){
         });
     });
 }
-
-document.getElementById('category').addEventListener('change', function() {
-    if (this.value === 'custom') {
-        document.getElementById('customCategory').style.display = 'inline-block';
-    } else {
-        document.getElementById('customCategory').style.display = 'none';
-    }
-});

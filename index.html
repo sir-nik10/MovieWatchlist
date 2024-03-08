@@ -12,31 +12,55 @@
         <h1 class="page-title">Movie WatchList</h1>
 
         <div id="search-bar">
-            <label for="movieTitle">Title:</label>
-            <input type="text" id="movieTitle">
-            <label for="movieYear">Year:</label>
-            <input type="text" id="movieYear">
-            <button id="searchMovieButton">Search Movies</button>
+            <label for="movie-title">Title:</label>
+            <input type="text" id="movie-title">
+            <label for="movie-year">Year:</label>
+            <input type="text" id="movie-year">
+            <button id="search-movie-button">Search Movies</button>
         </div>
     </div>
 
     <div id ="body-container">
-        <div id="watchlist">
-        <ul>
-
-        </ul>
+            <div id="watchlist">
+                <!-- <ul>
+                    <li>
+                        <div class = "movie-cell">
+                            <p class = "title"></p>
+                            <input type="checkbox" name="" id="">
+                            <button class="remove-button"></button>
+                            <p class="tag"></p>
+                        </div>
+                    </li>
+                </ul> -->
+            </div>
+        <div id="queried-movies-container">
+            <!-- <div class="searched-movies-div">
+                <img class = "poster-image" src="" alt="">
+                <p>movie title</p>
+                <p>release date</p>
+            </div> -->
+        </div>
     </div>
-    <!-- mnake invis -->
-    <div id= "info-box-container" style = "display:block;">
-        <p id="titleParagraph">Title: </p>
-        <p id="bioParagraph">Bio:</p>
-        <p id="tagsParagraph">Tags:</p>
-        <!-- dynamically populate with JS -->
-    </div>
 
-    <div id="queriedMoviesContainer" style = "display:grid">
+    <div id= "info-box-container" style = "display:none;">
+        <div id = info-box-row-1>
+            <div id="title-overview-column">
+                <h2 id="title-info-box">Title: </h2>
+                <p id="overview-info-box">Overview:</p>
+            </div>
+            <div id="poster-column">
+                <img id="poster-info-box"></img>
+                <p id="release-year-info-box">Release: </p>
+                <p id="rating-info-box">Rating:</p>
+            </div>
+        </div>
+        <div id="genre-container"></div>
+        <div id="button-container">
+            <button id="back-button-info-box" >back</button>
+            <button id="add-button-info-box">add</button>
+        </div>
         
-    </div>
+        <!-- dynamically populate with JS -->
     </div>
     
     <script src="js\main.js" type="module"></script>

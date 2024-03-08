@@ -1,11 +1,11 @@
 import { trimMovieTitle, checkEmpty, clearInputField } from "./movieData/movieDataUtils.js";
-import { fetchMovies } from "./api/api.js";
-
+import { fetchMovies, BASE_IMG_URL } from "./api/api.js";
+import { showMoreInfo, toggleMoreInfoVisibility } from "./moreInfoUI.js"
 var movieData = [];
 
 export async function searchMovies(){
     console.log("searching movies..");
-    let titleElement = document.getElementById('movieTitle');
+    let titleElement = document.getElementById('movie-title');
     let title = titleElement.value;
     //ensure the title is suitable for query
     if(checkEmpty(title)){
@@ -27,6 +27,7 @@ export async function searchMovies(){
 }
 
 async function storeMovieData(data){
+    movieData = [];
     data.forEach(row =>{
         if(row.poster_path != null){
             movieData.push(row);
@@ -37,8 +38,8 @@ async function storeMovieData(data){
 }
 
 async function showMovieData(data){
-    const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w500';
-    var container = document.getElementById('queriedMoviesContainer')
+    
+    var container = document.getElementById('queried-movies-container')
     container.innerHTML = '';
     let i =0;
     console.log("creating images");
@@ -81,5 +82,8 @@ async function showMovieData(data){
 }
 
 function imageClickHandler(){
+    console.log("image number: " +this.id +" clicked. ");
     console.log(movieData[this.id]);
+    toggleMoreInfoVisibility();
+    showMoreInfo(movieData[this.id]);
 }
