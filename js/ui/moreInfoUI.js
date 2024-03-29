@@ -1,7 +1,9 @@
 //needs the data information to populate mroe info box:
 //i.e. Overview, rating, genre, video, poster, title
 //on watchlist click and on serach movie click
-import { BASE_IMG_URL } from "./api/api.js";
+//Significance: Display more details of a selected movie title
+import { BASE_IMG_URL } from "../api/api.js";
+import { addToWatchlist } from "../movieData/movieResults.js";
 
 let inforBoxContainerElement = document.getElementById('info-box-container');
 let titleElement = document.getElementById('title-info-box');
@@ -12,7 +14,10 @@ let ratingElement = document.getElementById('rating-info-box');
 let genreContainerElement = document.getElementById('genre-container');
 let closeButtonElement = document.getElementById('back-button-info-box');
 closeButtonElement.onclick = toggleMoreInfoVisibility;
+let addButtonElement = document.getElementById('add-button-info-box');
+addButtonElement.onclick = addToWatchlist;
 
+//from movieResultsUI.js
 export function showMoreInfo(movieData){
     console.log("Displaying more info..");
     
@@ -41,6 +46,4 @@ export function toggleMoreInfoVisibility() {
     // Toggle display property of synopsis element
     inforBoxContainerElement.style.display = (inforBoxContainerElement.style.display === 'none') ? 'grid' : 'none';
 }
-
-
 

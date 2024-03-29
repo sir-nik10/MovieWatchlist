@@ -1,3 +1,4 @@
+//Helper functions to sanatize movie title to prepare to query database
 export function trimMovieTitle(title) {
     console.log("trimming the input..");
     // Remove leading and trailing whitespace

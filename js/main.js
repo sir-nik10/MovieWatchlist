@@ -1,4 +1,5 @@
-import { searchMovies } from "./movieResultsUI.js"
+//main js
+import { searchMovies } from './movieData/movieResults.js'
 
 function initializeApp() {
     console.log("app starting");

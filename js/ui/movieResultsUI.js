@@ -1,49 +1,14 @@
-import { trimMovieTitle, checkEmpty, clearInputField } from "./movieData/movieDataUtils.js";
-import { fetchMovies, BASE_IMG_URL } from "./api/api.js";
-import { showMoreInfo, toggleMoreInfoVisibility } from "./moreInfoUI.js"
-var movieData = [];
+//Display searched movie title to searched movie container
 
-export async function searchMovies(){
-    console.log("searching movies..");
-    let titleElement = document.getElementById('movie-title');
-    let title = titleElement.value;
-    //ensure the title is suitable for query
-    if(checkEmpty(title)){
-        console.log("input was empty.");
-        return;
-    }
-    title = trimMovieTitle(title);
-    console.log("movie title trimmed");
-    try{
-        const data = await fetchMovies(title);
-        //console.log("data:" + data)
-        storeMovieData(data);
-        showMovieData(movieData);
-    }catch(error){
-        handleError(error);
-    }
-    clearInputField(titleElement);
-   
-}
+import {  BASE_IMG_URL } from "../api/api.js";
+import { imageClickHandler } from "../movieData/movieResults.js";
 
-async function storeMovieData(data){
-    movieData = [];
-    data.forEach(row =>{
-        if(row.poster_path != null){
-            movieData.push(row);
-        }
-    })
-    // console.log("first row in list: " + movieData[0]);
-    // console.log("first row id in list: " + movieData[0].id);
-}
-
-async function showMovieData(data){
-    
+export async function showMovieData(results){
     var container = document.getElementById('queried-movies-container')
     container.innerHTML = '';
     let i =0;
     console.log("creating images");
-    data.forEach(row =>{
+    results.forEach(row =>{
         console.log(row);
         let posterData = row.poster_path;
         let titleData = row.title;
@@ -81,9 +46,3 @@ async function showMovieData(data){
     })
 }
 
-function imageClickHandler(){
-    console.log("image number: " +this.id +" clicked. ");
-    console.log(movieData[this.id]);
-    toggleMoreInfoVisibility();
-    showMoreInfo(movieData[this.id]);
-}
